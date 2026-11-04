@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FALQOR | Luxury Perfume</title>
+  <meta name="description" content="FALQOR luxury Eau de Parfum. Ten signature fragrances for men and women in three levels of luxury. Beyond Ordinary." />
+  <meta property="og:title" content="FALQOR | Beyond Ordinary" />
+  <meta property="og:description" content="More than a fragrance. It's a statement." />
+  <meta property="og:image" content="assets/img/lineup-wide.jpg" />
+  <meta name="theme-color" content="#0b0907" />
+  <link rel="icon" href="assets/img/logo-mark.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="announce">Complimentary express shipping on orders over $150 · Free gift wrapping on every order</div>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <button class="icon-btn nav__menu" id="menuBtn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <a href="#top" class="brand" aria-label="FALQOR home">
+        <img src="assets/img/logo-mark.jpg" alt="" class="brand__mark" />
+        <span class="brand__word">FALQOR</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#collection">Shop</a>
+        <a href="#collection" data-filter-link="men">Men</a>
+        <a href="#collection" data-filter-link="women">Women</a>
+        <a href="#tiers">Luxury levels</a>
+        <a href="#finder">Scent finder</a>
+        <a href="#gifting">Gifting</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-btn" id="wishBtn" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+          <span class="count" id="wishCount">0</span>
+        </button>
+        <button class="icon-btn" id="cartBtn" aria-label="Open cart">
+          <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <p class="eyebrow">Eau de Parfum · 50 ml</p>
+          <h1>Beyond<br /><em>Ordinary</em></h1>
+          <p class="hero__lead">More than a fragrance. It's a statement. Ten signature scents, each crafted in three levels of luxury, from everyday elegance to jewelled collector flacons.</p>
+          <div class="hero__cta">
+            <a href="#collection" class="btn btn--gold">Shop the collection</a>
+            <a href="#finder" class="btn btn--ghost">Find your scent</a>
+          </div>
+          <ul class="hero__stats">
+            <li><strong>10</strong><span>Signature scents</span></li>
+            <li><strong>3</strong><span>Luxury levels</span></li>
+            <li><strong>4.8★</strong><span>2,000+ reviews</span></li>
+          </ul>
+        </div>
+        <div class="hero__art reveal">
+          <figure class="hero__card hero__card--a"><img src="assets/img/ninja-hero.jpg" alt="Urban Ninja black leather-textured bottle" /></figure>
+          <figure class="hero__card hero__card--b"><img src="assets/img/rose-hero.jpg" alt="Rosé Noir faceted pink crystal bottle" /></figure>
+          <div class="hero__seal"><span>Est.<br />2026</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marquee"></div>
+    </div>
+
+    <!-- COLLECTION -->
+    <section class="section" id="collection">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">The Collection</p>
+          <h2>Ten scents. One signature.</h2>
+          <p class="muted">Five for him, five for her. Choose a scent, then choose how you wear it.</p>
+        </div>
+        <div class="filters reveal" role="tablist">
+          <button class="chip is-active" data-filter="all">All</button>
+          <button class="chip" data-filter="men">Men's</button>
+          <button class="chip" data-filter="women">Women's</button>
+          <span class="filters__sep"></span>
+          <label class="select">
+            <span class="sr-only">Sort</span>
+            <select id="sort">
+              <option value="featured">Featured</option>
+              <option value="rating">Top rated</option>
+              <option value="name">A to Z</option>
+            </select>
+          </label>
+        </div>
+        <div class="grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <!-- TIERS -->
+    <section class="section section--dark" id="tiers">
+      <div class="container tiers">
+        <div class="tiers__media reveal">
+          <img src="assets/img/amber-tiers.jpg" alt="Amber Rouge in Affordable, Premium and Ultra Luxury bottles" />
+        </div>
+        <div class="tiers__copy reveal">
+          <p class="eyebrow">Three Levels of Luxury</p>
+          <h2>Same soul.<br />Your expression.</h2>
+          <p class="muted">Every FALQOR fragrance is offered in three editions. The scent DNA stays true; the flacon, concentration and presentation rise with each level.</p>
+          <div class="tier-list" id="tierList"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPOTLIGHT -->
+    <section class="section">
+      <div class="container spotlight">
+        <article class="spot reveal" style="--spot:#2f6bd1">
+          <img src="assets/img/ocean-box.jpg" alt="Ocean Legend presentation box" />
+          <div class="spot__body">
+            <p class="eyebrow">Men's Spotlight</p>
+            <h3>Ocean Legend</h3>
+            <p>Fresh aquatic. Sea salt, bergamot and ambergris for days that feel limitless.</p>
+            <button class="btn btn--ghost" data-open="ocean-legend">Discover</button>
+          </div>
+        </article>
+        <article class="spot reveal" style="--spot:#c4223a">
+          <img src="assets/img/amber-hero.jpg" alt="Amber Rouge crimson crystal bottle" />
+          <div class="spot__body">
+            <p class="eyebrow">Women's Spotlight</p>
+            <h3>Amber Rouge</h3>
+            <p>Amber sweet. Passion, seduction and exclusivity, bottled in crimson crystal.</p>
+            <button class="btn btn--ghost" data-open="amber-rouge">Discover</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FINDER -->
+    <section class="section section--dark" id="finder">
+      <div class="container finder reveal">
+        <div class="section__head">
+          <p class="eyebrow">Scent Finder</p>
+          <h2>Find your statement</h2>
+          <p class="muted">Three questions. One perfect match.</p>
+        </div>
+        <div class="finder__card" id="finderCard"></div>
+      </div>
+    </section>
+
+    <!-- GIFTING -->
+    <section class="section" id="gifting">
+      <div class="container gifting">
+        <div class="gifting__copy reveal">
+          <p class="eyebrow">The Art of Gifting</p>
+          <h2>Unboxing, elevated.</h2>
+          <p class="muted">Each fragrance arrives in its own hand-designed marbled box, lined in satin and stamped with the FALQOR falcon. Add a handwritten note at checkout. We'll do the rest.</p>
+          <ul class="ticks">
+            <li>Signature marbled box with satin lining</li>
+            <li>Complimentary gift wrap &amp; handwritten card</li>
+            <li>Discovery set: 10 × 2 ml vials, $49</li>
+          </ul>
+          <button class="btn btn--gold" id="discoveryBtn">Add discovery set, $49</button>
+        </div>
+        <div class="gifting__media reveal">
+          <img src="assets/img/boxes-wide.jpg" alt="All ten FALQOR fragrances in their presentation boxes" />
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section section--dark">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Worn &amp; Loved</p>
+          <h2>Words from our clients</h2>
+        </div>
+        <div class="reviews">
+          <blockquote class="review reveal"><p>"Ocean Legend in the Premium bottle is my new daily. Compliments every single time."</p><cite>James T. · Sydney</cite><span class="stars">★★★★★</span></blockquote>
+          <blockquote class="review reveal"><p>"Rosé Noir lasts all day and the crystal bottle looks like jewellery on my vanity."</p><cite>Amira K. · Melbourne</cite><span class="stars">★★★★★</span></blockquote>
+          <blockquote class="review reveal"><p>"Bought the Ultra Amber Rouge as an anniversary gift. The box alone got a gasp."</p><cite>Daniel R. · Brisbane</cite><span class="stars">★★★★★</span></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="section newsletter">
+      <div class="container newsletter__inner reveal">
+        <img src="assets/img/logo-mark.jpg" alt="" class="newsletter__mark" />
+        <h2>Join the Falcon Circle</h2>
+        <p class="muted">Early access to new scents, private sales and 10% off your first order.</p>
+        <form class="newsletter__form" id="newsForm">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" type="email" placeholder="Your email address" required />
+          <button class="btn btn--gold" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="#top" class="brand"><img src="assets/img/logo-mark.jpg" alt="" class="brand__mark" /><span class="brand__word">FALQOR</span></a>
+        <p class="muted small">Beyond Ordinary. Luxury Eau de Parfum.</p>
+      </div>
+      <div><h4>Shop</h4><a href="#collection" data-filter-link="men">Men's collection</a><a href="#collection" data-filter-link="women">Women's collection</a><a href="#gifting">Gift sets</a></div>
+      <div><h4>Care</h4><a href="#">Shipping &amp; returns</a><a href="#">Contact</a><a href="#">FAQ</a></div>
+      <div><h4>Follow</h4><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Facebook</a></div>
+    </div>
+    <div class="container footer__base small muted">© 2026 FALQOR. Demo storefront. No real orders are processed.</div>
+  </footer>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+      <button class="icon-btn modal__close" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__backdrop" data-close-cart></div>
+    <div class="drawer__panel" role="dialog" aria-label="Shopping bag">
+      <div class="drawer__head">
+        <h3>Your bag</h3>
+        <button class="icon-btn" data-close-cart aria-label="Close bag"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <div class="ship" id="ship"></div>
+      <div class="drawer__items" id="cartItems"></div>
+      <div class="drawer__foot">
+        <div class="row"><span>Subtotal</span><strong id="subtotal">$0</strong></div>
+        <p class="small muted">Taxes included. Shipping calculated at checkout.</p>
+        <button class="btn btn--gold btn--block" id="checkoutBtn">Checkout</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
